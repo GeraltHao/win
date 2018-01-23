@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Windows 10</title> 
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/prldr.css"><!-- Прелоадер -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
+</head>
+
+<body>
+    <!-- Прелоадер -->
+    <div id="p_prldr"><div class="contpre"><span class="svg_anm"></span><br>Windows<br><small>Добро пожаловать</small></div></div>
+    <script type="text/javascript" src="js/prldr.js"></script>
+    <!-- /Прелоадер -->
+
+    <div id="window" class="window"><!-- Основное окно -->
+
+    <!-- Ярлык 1 на рабочем столе -->
+    <div class="icon-computer text-center" id="icon-computer" onclick="opencom()">
+        <img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500505053/thumb_14339670430This_PC_fo5lbo.png" class="img-responsive">
+        <p>Этот ПК</p>
+    </div>
+    <!-- Ярлык 2 на рабочем столе -->
+    <div class="icon-computer text-center" id="icon-computer" onclick="javascript:window.open('https://drive.google.com/drive/folders/0BxNHJZK2tQK6MDNFSml3S1FDUk0?usp=sharing');">
+        <img src="http://freestickers.world/packs/study_vk/thumb.png" class="img-responsive">
+        <p>Учеба</p>
+    </div>
+     <!-- Ярлык 3 на рабочем столе -->
+     <div class="icon-computer text-center" id="icon-computer" onclick="javascript:window.open('https://www.geoguessr.com/');">
+        <img src="http://вектор-знаний.рф/wp-content/uploads/2016/11/Location-256.png" class="img-responsive">
+        <p>Угадай место</p>
+    </div>
+
+    <!-- Правое меню настройки -->
+    <section class="option-box">
+        <div class="color-box">
+            <h4>Настройки</h4>
+            <a class="btn btn-primary center-block text-center" onclick="openabout()">Для меня</a>
+        </div>
+        <i class="fa fa-gear fa-3x gear-check"></i>
+    </section>
+    
+    <!-- Внутри "This PC" -->
+    <div class="overlay-computer" id="overlay-computer">
+        <div class="fluid-container">
+            <div class="first-row-win" id="first-row-win">
+                <div class="left">
+                    <i class="fa fa-folder"></i>
+                    <span>Этот компьютер</span>
+                </div>
+                <div class="right">
+                    <i class="fa fa-window-minimize" onclick="closeopencom()"></i>
+                    <i class="fa fa-window-restore" onclick="returncom()" id="returncam" style="display:none;"></i>
+                    <i class="fa fa-window-maximize" onclick="upercom()" id="upercam"></i>
+                    <i class="fa fa-times" onclick="closecom()"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="second-row-win">
+                <div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a class="home-a" href="#home" aria-controls="home" role="tab" data-toggle="tab">Файлы</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Домашняя</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Поиск</a></li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Обзор</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <div class="col-xs-1 text-center" onclick="window.open('https://mail.ru/')">
+                                <i class="fa fa-envelope-open fa-2x"></i>
+                                <p>Почта</p>
+                            </div>
+                            <div class="col-xs-1 text-center" onclick="window.open('https://codepad.remoteinterview.io/QJGCIXGNBA')">
+                                <i class="fa fa-file-code-o  fa-2x"></i>
+                                <p>C#</p>
+                            </div>
+                            <div class="col-xs-1 text-center" onclick="opennote()">
+                                <i class="fa fa-sticky-note-o fa-2x"></i>
+                                <p>Заметки</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-user-circle fa-2x"></i>
+                                <p>Пользователи</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-battery-4  fa-2x"></i>
+                                <p>Батарея</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-book fa-2x"></i>
+                                <p>Книги</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-car fa-2x"></i>
+                                <p>Машины</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-camera-retro  fa-2x"></i>
+                                <p>Камера</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-building fa-2x"></i>
+                                <p>Дом</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="settings">
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-cubes fa-2x"></i>
+                                <p>Программы</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-coffee fa-2x"></i>
+                                <p>Продукты</p>
+                            </div>
+                            <div class="col-xs-1 text-center">
+                                <i class="fa fa-film fa-2x"></i>
+                                <p>Фильмы</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="third-row-win">
+                <div class="col-xs-2">
+                    <i class="fa fa-long-arrow-left"></i>
+                    <i class="fa fa-long-arrow-right"></i>
+                    <i class="fa fa-chevron-down"></i>
+                    <i class="fa fa-arrow-up"></i>
+                </div>
+                <div class="col-xs-7">
+                    <div class="path-input">
+                        <span class="path-icon-input">Этот компьютер</span>
+                        <span class="path-icon-input">C:/</span>
+                    </div>
+                    <i class="fa fa-hdd-o path-icon"></i>
+                    <i class="fa fa-repeat path-icon-1"></i>
+                    <i class="path-icon-2">|</i>
+                </div>
+                <div class="col-xs-3">
+                    <input class="search-input" type="text" placeholder="Search">
+                    <i class="fa fa-search path-icon-1"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="fourd-row-win">
+                <div class="col-xs-3" style="border-right: 1px solid #808080;">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <span class="fa fa-star">Избранное</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <p><span class="fa fa-desktop"><a href="https://windows-web.firebaseapp.com" target="_blank">Рабочий стол</a></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <span class="fa fa-folder-open">Облако</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <p><span class="fa fa-download"><a href="https://drive.google.com/drive/folders/0BxNHJZK2tQK6WUF0NUw5bmUtYUE?usp=sharing" target="_blank">Мои программы</a></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <span class="fa fa-desktop">Программы</span>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <p> <a href="https://www.google.ru/chrome/browser/desktop/index.html#" target="_blank">Хром</a> </p>
+                                    <p> <a href="https://www.skype.com/ru/new/" target="_blank">Скайп</a> </p>
+                                    <p> <a href="http://www.utorrent.com/intl/ru/" target="_blank">Торрент</a> </p>
+                                    <p> <a href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb?hl=ru" target="_blank">Adblock Plus</a> </p>
+                                    <p> <a href="https://chrome.google.com/webstore/detail/frigate-cdn-smooth-access/mbacbcfdfaapbcnlnbmciiaakomhkbkb" target="_blank">FriGate CDN</a> </p>
+                                    <p> <a href="https://www.teamviewer.com/ru/" target="_blank">TeamViewer</a> </p>
+                                    <p> <a href="https://code.visualstudio.com/download" target="_blank">Visual Studio Code</a> </p>
+                                    <p> <a href="http://www.nvidia.ru/Download/index.aspx?lang=ru" target="_blank">Драйвера nvidia</a> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-9 ">
+                    <div class="row main-folders">
+                        <div class="col-xs-2 folders text-center" onclick="openimg()">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500503391/admin-3_yilprt.jpg" class="img-responsive  center-block" alt=""></p>
+                            <span>Фото</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center" onclick="openvid()">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500505068/myposter_vlaggb.png" class="img-responsive  center-block" alt=""></p>
+                            <span>Видео</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center" onclick="opennote()">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500505134/if_sticky-note_299111_px7waa.png" class="img-responsive  center-block" alt=""></p>
+                            <span>Заметки</span>
+                        </div>
+                        <div class="col-xs-2 folders text-center">
+                            <p class="contain"><img src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500502735/if_folder-blue_285658_f5jeko.svg" class="img-responsive  center-block" style="height: 64px;" alt=""></p>
+                            <span>Новая папка</span>
+                        </div>
+
+                        
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fived-row-win"></div>
+        </div>
+        <div class="resizer"></div>
+    </div>
+    <!-- Конец Внутри "This PC" -->
+
+    
+    <div class="clearfix"></div>
+    <div class="image-overlay" id="image-overlay">
+        <div class="fluid-container">
+            <div class="first-row-img">
+                <span class="center-text head-over">Мои изображения</span>
+                <div class="right">
+                    <i class="fa fa-times" onclick="closeimg()"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="second-row-img">
+                <img src="https://pp.userapi.com/c638623/v638623858/3c1a3/l1rmdYUSnHE.jpg" class="center-block img-responsive" style="height:80vh" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="video-overlay" id="video-overlay">
+        <div class="fluid-container">
+            <div class="first-row-vid">
+                <span class="center-text head-over">Мои видео</span>
+                <div class="right">
+                    <i class="fa fa-times" onclick="closevid()"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="second-row-vid">
+                <div style="position:relative;height:0;padding-bottom:56.25%;"><iframe src="https://www.youtube.com/embed/Eay0BJiBVv4?ecver=2" style="position:absolute;width: 50%;height: 50vh;left: 25%;" width="640" height="360" frameborder="0" allowfullscreen></iframe></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="note-overlay" id="note-overlay">
+        <div class="fluid-container">
+            <div class="first-row-note">
+                <span class="center-text head-over">Заметки</span>
+                <div class="right">
+                    <i class="fa fa-times" onclick="closenote()"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="second-row-note">
+                <textarea></textarea>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about-overlay" id="about-overlay">
+        <div class="fluid-container">
+            <div class="first-row-img">
+                <span class="center-text head-over">Немного иформации для меня</span>
+                <div class="right">
+                    <i class="fa fa-times" onclick="closeabout()"></i>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="second-row-abo">
+                <div>
+                    <img src="https://pp.userapi.com/c840728/v840728727/245b0/Qor6DVB1liE.jpg" class="img-responsive" alt="">
+                    <p>
+                     Тут будет какая-нибудь инфа для меня   
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="start-window-fade hidden-start" id="start-window-fade"></div>
+    <div class="start-window hidden-start" id="start-window">
+        <div class="fluid-container" id="container-start">
+            <div class="row">
+                <div class="col-xs-1 first-column">
+                    <div class="icon-bottom" id="power" onclick="powerOff()">
+                        <i class="fa fa-power-off fa-1x"></i>
+                    </div>
+                    <div class="icon-bottom">
+                        <i class="fa fa-cog fa-1x"></i>
+                    </div>
+                    <div class="icon-bottom">
+                        <i class="fa fa-folder-open-o fa-1x"></i>
+                    </div>
+                    <div class="icon-bottom">
+                        <i class="fa fa-user fa-1x"></i>
+                    </div>
+                    <div class="icon-bottom open-icon-list">
+                        <i class="fa fa-bars fa-1x"></i>
+                    </div>
+                </div>
+                <div class="col-xs-3 second-column">
+                    <div class="wrap-scroll">
+                        <div class="head-med">
+                            <small>WEB</small>
+                        </div>
+                    <div class="media" onclick="window.open('https://htmlacademy.ru/')">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="https://htmlacademy.ru/apple-touch-icon.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading">Учебник Html</small>
+                        </div>
+                    </div>
+                    <div class="media" onclick="window.open('https://codepen.io/')">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="http://blog.codepen.io/wp-content/uploads/2012/06/Button-White-Large.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading">Css приколюхи</small>
+                        </div>
+                    </div>
+                    <div class="media" onclick="window.open('https://learn.javascript.ru/')">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500503920/Javascript-shield_grysg1.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading">Основы JavaScript</small>
+                        </div>
+                    </div>
+                    <div class="media" onclick="window.open('https://learn.javascript.ru/')">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="https://w3layouts.com/wp-content/themes/w3layouts/images/logo.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading">Топовые шаблончики</small>
+                        </div>
+                    </div>
+                    <div class="media" onclick="window.open('https://console.firebase.google.com/u/2/?pli=1')">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading">FireBase</small>
+                        </div>
+                    </div>
+                    <div class="head-med">
+                        <small>Программы</small>
+                    </div>
+                    <div class="media" onclick="window.open('http://editor.0lik.ru/')">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500504181/Photoshop_CC_icon_gyvgzg.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading">Photoshop online</small>
+                        </div>
+                    </div>
+                    <div class="media" onclick="window.open('https://github.com/GeraltHao')">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500503401/github-desktop-icon_zzzpbq.png" width="35" height="35" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <small class="media-heading">github</small>
+                        </div>
+                    </div>
+
+
+                    </div>
+                </div>
+                <div class="col-xs-4 third-column">
+                    <div class="head-box">
+                        <small>Плиточка</small>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-push-4 box" onclick="javascript:window.open('http://mail.com');">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-envelope fa-2x"></i>
+                                </div>
+                                <div>
+                                    Почта
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-xs-pull-8 box">
+                            <div class="box-style text-center">
+                                <div class="mycontainer">
+                                    <div id="day">day</div>
+                                    <div id="number-day">number</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 box"  onclick="javascript:window.open('https://translate.google.ru/');">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-exchange fa-2x"></i>
+                                </div>
+                                <div>
+                                    Переводчик
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box" onclick="javascript:window.open('https://www.e-reading.club/');">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-book fa-2x"></i>
+                                </div>
+                                <div>
+                                    Книги
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-xs-4 box" onclick="window.open('https://yandex.ru/pogoda/rostov-na-donu')">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-sun-o fa-2x"></i>
+                                </div>
+                                <div>
+                                    Погода
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                        <div class="col-xs-4 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-laptop fa-2x"></i>
+                                </div>
+                                <div>
+                                    ПК
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box" onclick="javascript:window.open('http://vk.com');">
+                            <div class="box-style" style="background:url('https://pp.userapi.com/c840728/v840728727/245b0/Qor6DVB1liE.jpg');background-size: cover;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div>
+                                    vk 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box" onclick="javascript:window.open('https://nnm-club.lib/');">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-download  fa-2x"></i>
+                                </div>
+                                <div>
+                                    Nnm-club
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box" onclick="javascript:window.open('https://discordapp.com');">
+                            <div class="box-style text-center" style="background:url('https://pbs.twimg.com/profile_images/942834619702902784/-YkaO0Te_400x400.jpg');background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-skype  fa-2x"></i>
+                                </div>
+                                <div>
+                                    Discord
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box" onclick="javascript:window.open('https://online.anidub.com/');">
+                            <div class="box-style text-center" style="background:url('http://static.anidub.com/forum/profile/photo-15203.jpg');background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div style="font-size: 10px;">
+                                    <b class="black"> AniDUB</b>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="head-box">
+                        <small>Прочее</small>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 box" onclick="javascript:window.open('https://www.youtube.com/');">
+                            <div class="box-style" style="background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO8GBImbzsK9004QvK61t_9DYUL_qgjlrxWdlseEVJ6UoU_5ivpw');background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div style="font-size: 10px;">
+                                    <b> YouTube</b> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-music fa-2x"></i>
+                                </div>
+                                <div style="font-size: 10px;">
+                                    Музыка
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-film fa-2x"></i>
+                                </div>
+                                <div style="font-size: 10px;">
+                                    Фильмы
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box" onclick="javascript:window.open('https://trello.com');">
+                            <div class="box-style" style="background:url('https://cdn.zapier.com/storage/services/da3ff465abd3a3e1b687c52ff803af74.128x128.png');background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div style="font-size: 10px;">
+                                    Trello 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background:url('http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500504576/1200x630bb_juslti.jpg');background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div style="font-size: 10px;">
+                                    minecraft
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box" onclick="javascript:window.open('http://wikimapia.org/#lang=ru&lat=47.240550&lon=39.441605&z=11&m=b&tag=2390');">
+                            <div class="box-style" style="background:url('http://cozumbuldum.com/wp-content/uploads/2017/04/wikimapia.jpg');background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div style="font-size: 10px;">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-8 col-xs-push-4 box" onclick="javascript:window.open('https://news.yandex.ru/');">
+                            <div class="box-style" style="background:url('http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500503395/bank_cf8dgr.jpg');background-size: 130%;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div>
+                                    Новости 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 col-xs-pull-8 box" onclick="javascript:window.open('https://hitbtc.com/account');">
+                            <div class="box-style" style="background:url('http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500504662/maxresdefault_live_bwb3qd.jpg');background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div>
+                                    Финансы
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box" onclick="javascript:window.open('https://www.mohmal.com/ru');">
+                            <div class="box-style" style="background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1D1a4BDd48uFAtKhCOUWuG32pQGAX4UJdIRRvcstRBSaxmQk0');background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div style="font-size: 10px;">
+                                    Одноразовое мыло
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background:url('http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500503787/onenote-amazon-app-store-100361701-large_m6lbsu.jpg');background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div style="font-size:12px;">
+                                    OneNote
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 box">
+                            <div class="box-style" style="background:url('http://res.cloudinary.com/dr5ei3rt1/image/upload/v1500504701/office2016logo_uw8zcd.png');background-size: cover;background-position: center;">
+                                <div class="icon-bottom text-center" style="margin: 20px;">
+                                    <i class="fa fa-twitter fa-2x" style="color: rgba(0,0,0,0);"></i>
+                                </div>
+                                <div style="font-size:10px;">
+                                    Office
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="nav navbar-inverse navbar-fixed-bottom footer text-center">
+        <div class="fluid-container">
+            <div class="row">
+                <div class="left">
+                    <div class="col-xs-1-me">
+                        <div class="icon-bottom strat-win" id="strat-win">
+                            <i class="fa fa-windows fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me">
+                        <div class="icon-bottom" onclick="javascript:window.open('http://google.com');">
+                            <i class="fa fa-search fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me" onclick="javascript:window.open('http://mail.ru');">
+                        <div class="icon-bottom">
+                            <i class="fa fa-envelope fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me" id="a1">
+                        <div class="icon-bottom">
+                            <i class="fa fa-folder fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me" id="a2">
+                        <div class="icon-bottom">
+                            <i class="fa fa-picture-o fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me" id="a3">
+                        <div class="icon-bottom">
+                            <i class="fa fa-film fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me" id="a4">
+                        <div class="icon-bottom">
+                            <i class="fa fa-file-text-o fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me" id="a5">
+                        <div class="icon-bottom">
+                            <i class="fa fa-id-card fa-2x"></i>
+                        </div>
+                    </div>
+                    <span class=".clearfix"></span>
+                </div>
+                <div class="right">
+                    <div class="col-xs-1-me" id="close-all">
+                    </div>
+                    <div class="col-xs-1-me">
+                        <div class="icon-bottom">
+                            <i class="fa fa-bell fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="date col-xs-1-me">
+                        <span id="time">00:00</span>
+                        <span id="history">00/00/0000</span>
+                    </div>
+                    <div class="col-xs-1-me">
+                        <div class="icon-bottom">
+                            <i class="fa fa-volume-up  fa-2x"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-1-me">
+                        <div class="icon-bottom">
+                            <i class="fa fa-chevron-up fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
